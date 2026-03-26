@@ -1,0 +1,118 @@
+.beamApp {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: #0b0d14;
+}
+
+.menuBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 0 16px;
+  background: rgba(11, 13, 20, 0.7);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+}
+
+.menuRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 260px;
+}
+
+.menuLabel {
+  color: #e8ecff;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  font-size: 14px;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.menuValue {
+  font-weight: 700;
+}
+
+.menuSlider {
+  width: 260px;
+  accent-color: #8b5cf6;
+}
+
+.menuHint {
+  color: rgba(232, 236, 255, 0.7);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  font-size: 12px;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.canvas {
+  width: 100%;
+  height: 100vh;
+  display: block;
+}
+
+.hoverPanel {
+  position: fixed;
+  z-index: 20;
+  transform: translate(12px, 12px);
+  background: rgba(11, 13, 20, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 6px;
+  display: flex;
+  gap: 6px;
+  pointer-events: auto;
+  backdrop-filter: blur(10px);
+
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.hoverPanel.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.hoverButton {
+  pointer-events: auto;
+  width: 34px;
+  height: 30px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.06);
+  color: #e8ecff;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.hoverButton:hover {
+  border-color: rgba(192, 132, 252, 0.55);
+}
+
+.hoverButton.active {
+  background: rgba(192, 132, 252, 0.18);
+  border-color: rgba(192, 132, 252, 0.7);
+}
+
+@media (max-width: 640px) {
+  .menuHint {
+    display: none;
+  }
+
+  .menuSlider {
+    width: 160px;
+  }
+}
+
