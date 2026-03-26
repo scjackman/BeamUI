@@ -3,6 +3,8 @@ import react from '@vitejs/plugin-react'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/BeamUI/',
+  // Use relative asset paths so deployments under subpaths (e.g. Vercel)
+  // don't break the production bundle.
+  base: './',
   plugins: [react()],
 })
